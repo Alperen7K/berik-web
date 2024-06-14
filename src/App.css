@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'swiss';
+    src: url('/src/assets/fonts/Swis721_Hv_BT_Heavy.ttf') format('ttf');
+  }
+
+  .font-swiss{
+    font-family: "swiss",sans-serif;
+    font-weight: bold;
+  }
+@font-face {
+    font-family: 'engravers';
+    src: url('/src/assets/fonts/ENGRGOTN.TTF') format('ttf');
+  }
+
+  .font-engravers{
+    font-family: "engravers",sans-serif;
+  }
