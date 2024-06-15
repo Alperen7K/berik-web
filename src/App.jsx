@@ -1,167 +1,136 @@
-import { useTranslation } from "react-i18next";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 import "./App.css";
+import { Linkedin } from "./assets/Linkedin";
+import { Mail } from "./assets/Mail";
+import { X } from "./assets/X";
 import { Navbar } from "./components";
-import { useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import circle from "./assets/circle.png";
+import { useTranslation } from "react-i18next";
+import React, { useRef } from "react";
+import {
+ motion,
+ useMotionTemplate,
+ useMotionValue,
+ useSpring,
+} from "framer-motion";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
 function App() {
  const [t] = useTranslation("general");
-
- const refSm = useRef(null);
- const containerSm = useRef();
- const refM = useRef(null);
- const containerM = useRef();
-
- useEffect(() => {
-  const galleryWrapperSm = containerSm.current;
-  const gallerySm = refSm.current;
-
-  ScrollTrigger.create({
-   trigger: galleryWrapperSm,
-   start: "top top",
-   end: "bottom bottom",
-   scrub: 0.5,
-
-   pin: gallerySm,
-  });
-
-  const tl = gsap.timeline();
-  tl.to(gallerySm, {
-   rotate: `360deg`,
-   scrollTrigger: {
-    trigger: galleryWrapperSm,
-    start: "top top",
-    end: `bottom bottom`,
-    scrub: 0.5,
-   },
-  });
-
-  const galleryWrapperM = containerM.current;
-  const galleryM = refM.current;
-
-  ScrollTrigger.create({
-   trigger: galleryWrapperM,
-   start: "top top",
-   end: "bottom bottom",
-   scrub: 0.5,
-
-   pin: galleryM,
-  });
-
-  tl.to(galleryM, {
-   rotate: `360deg`,
-   scrollTrigger: {
-    trigger: galleryWrapperM,
-    start: "top top",
-    end: `bottom bottom`,
-    scrub: 0.5,
-   },
-  });
- }, []);
 
  return (
   <>
    <Navbar />
-   {/* SECTION 1 */}
-   <div className="min-h-screen w-full border-b-2 border-solid border-black">
-    <div className="w-full min-h-screen p-4 flex flex-col items-center justify-center gap-y-8">
-     <h1 className="font-swiss text-center text-[24px]">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, distinctio?
+   <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center overflow-hidden">
+    <TiltCard />
+    {/* <div className="w-[80vw] rounded-xl bg-gri h-[60vh] flex flex-col justify-between">
+     <h1 className=" font-swiss text-center text-[20px] sm:text-[24px] lg:text-[30px]">
+      {t("title")}
      </h1>
-     <h2 className="font-swiss text-center text-[20px]">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, distinctio?
-     </h2>
-    </div>
-   </div>
-   {/* SECTION 2 */}
-   {/* SM ÜSTÜ */}
-   <div
-    ref={containerSm}
-    className="w-full min-h-[300vh] overflow-hidden  flex-col items-center hidden sm:flex"
-   >
-    <div ref={refSm}>
-     <div className="relative w-[150vw] h-[100vw] pb-[50vw] rounded-full  overflow-hidden grid grid-cols-2 ">
-      {/* <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="-rotate-45 w-[80vw] text-center">
-      1- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
-      </div>
-      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="rotate-45 w-[80vw] text-center">
-      4- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
-      </div>
-      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="rotate-45 scale-[-1] w-[80vw] text-center">
-      2- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
-      </div>
-      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="-rotate-45 scale-[-1] w-[80vw] text-center">
-      3- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
-    </div> */}
-
-      <div className="absolute w-[150vw] h-[100vw] flex items-center justify-center">
-       <img src={circle} className="size-[15vh]" />
-      </div>
-     </div>
-    </div>
-   </div>
-   {/* SM ALTI */}
-   <div
-    ref={containerM}
-    className="w-full min-h-[300vh] overflow-hidden flex flex-col items-center sm:hidden"
-   >
-    <div
-     ref={refM}
-     className="relative w-[150vh] h-[150vh] mt-[3vh] rounded-full  overflow-hidden grid grid-cols-2 "
-    >
-     <div className="w-[75vh] h-[75vh]  flex items-center justify-center ">
-      <label className="-rotate-45 w-[80vw] text-center">
-       1- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-       soluta.
-      </label>
-     </div>
-     <div className="w-[75vh] h-[75vh]  flex items-center justify-center ">
-      <label className="rotate-45 w-[80vw] text-center">
-       4- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-       soluta.
-      </label>
-     </div>
-     <div className="w-[75vh] h-[75vh]  flex items-center justify-center ">
-      <label className="rotate-45 scale-[-1] w-[80vw] text-center">
-       2- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-       soluta.
-      </label>
-     </div>
-     <div className="w-[75vh] h-[75vh]  flex items-center justify-center ">
-      <label className="-rotate-45 scale-[-1] w-[80vw] text-center">
-       3- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-       soluta.
-      </label>
-     </div>
-
-     <div className="absolute w-[150vh] h-[150vh] flex items-center justify-center">
-      <img src={circle} className="size-[15vh]" />
-     </div>
-    </div>
-   </div>
-   {/* SECTION 3 */}
-   <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center">
-    <h1 className="font-swiss text-center">{t("title")}</h1>
+     <a
+      href="mailto:info@berikgirisim.com"
+      className="font-engravers text-center text-[20px] flex items-center  mx-auto bg-kırmızı px-4 py-2 rounded-md text-white"
+     >
+      <Mail className="size-6 fill-white mr-2" />
+      info@
+      <strong>berikgirisim</strong>
+      .com
+     </a>
+     </div> */}
+    {/* <section className="fixed bottom-6 right-10 flex items-center gap-x-2 *:fill-koyu_gri *:size-8">
+      <X className="" />
+      <Linkedin className="" />
+     </section> */}
    </div>
   </>
  );
 }
 
 export default App;
+
+const ROTATION_RANGE = 15.5;
+const HALF_ROTATION_RANGE = 15.5 / 2;
+
+const TiltCard = () => {
+ const ref = useRef(null);
+ const [t] = useTranslation("general");
+
+ const x = useMotionValue(0);
+ const y = useMotionValue(0);
+
+ const xSpring = useSpring(x);
+ const ySpring = useSpring(y);
+
+ const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+ const handleMouseMove = (e) => {
+  if (!ref.current) return [0, 0];
+
+  const rect = ref.current.getBoundingClientRect();
+
+  const width = rect.width;
+  const height = rect.height;
+
+  const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+  const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
+
+  const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
+  const rY = mouseX / width - HALF_ROTATION_RANGE;
+
+  x.set(rX);
+  y.set(rY);
+ };
+
+ const handleMouseLeave = () => {
+  x.set(0);
+  y.set(0);
+ };
+
+ return (
+  <motion.div
+   ref={ref}
+   onMouseMove={handleMouseMove}
+   onMouseLeave={handleMouseLeave}
+   style={{
+    transformStyle: "preserve-3d",
+    transform,
+   }}
+   className="relative h-[70vh] w-[95vw] sm:w-[80vw] bg-acik_gri/20 rounded-[75px] border-2 border-solid border-gri/10 "
+  >
+   <div
+    className="p-4 py-12 flex flex-col justify-between items-center h-full"
+    style={{
+     transform: "translateZ(75px)",
+     transformStyle: "preserve-3d",
+    }}
+   >
+    <h1 className="md:px-10 py-8 font-swiss text-center text-[20px] sm:text-[24px] lg:text-[30px]">
+     {t("title")}
+    </h1>
+
+    <a
+     href="mailto:info@berikgirisim.com"
+     className="font-engravers text-center w-fit text-[20px] flex items-center  mx-auto bg-kırmızı hover:bg-kırmızı/90 duration-300 hover:scale-105 px-4 py-2 rounded-2xl text-white"
+    >
+     <Mail className="size-6 fill-white mr-2" />
+     info@
+     <strong>berikgirisim</strong>
+     .com
+    </a>
+    <section className="mx-auto flex items-center gap-x-2 *:fill-gri *:size-8 *:*:duration-300 *:*:rounded-lg">
+     <a
+      href="https://x.com/berikgirisim"
+      target="_blank"
+      rel="Berik Girişim X Hesabı"
+     >
+      <X className="hover:fill-koyu_gri " />
+     </a>
+     <a
+      href="https://www.linkedin.com/company/berik-girisim/?trk=similar-pages"
+      target="_blank"
+      rel="Berik Girişim Linkedin Hesabı"
+     >
+      <Linkedin className="hover:fill-koyu_gri " />
+     </a>
+    </section>
+   </div>
+  </motion.div>
+ );
+};
