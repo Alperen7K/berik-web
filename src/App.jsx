@@ -1,10 +1,10 @@
 import "./App.css";
-import { Linkedin } from "./assets/Linkedin";
-import { Mail } from "./assets/Mail";
 import { X } from "./assets/X";
+import { Mail } from "./assets/Mail";
 import { Navbar } from "./components";
-import { useTranslation } from "react-i18next";
 import React, { useRef } from "react";
+import { Linkedin } from "./assets/Linkedin";
+import { useTranslation } from "react-i18next";
 import {
  motion,
  useMotionTemplate,
@@ -13,31 +13,11 @@ import {
 } from "framer-motion";
 
 function App() {
- const [t] = useTranslation("general");
-
  return (
   <>
    <Navbar />
    <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center overflow-hidden">
     <TiltCard />
-    {/* <div className="w-[80vw] rounded-xl bg-gri h-[60vh] flex flex-col justify-between">
-     <h1 className=" font-swiss text-center text-[20px] sm:text-[24px] lg:text-[30px]">
-      {t("title")}
-     </h1>
-     <a
-      href="mailto:info@berikgirisim.com"
-      className="font-engravers text-center text-[20px] flex items-center  mx-auto bg-kırmızı px-4 py-2 rounded-md text-white"
-     >
-      <Mail className="size-6 fill-white mr-2" />
-      info@
-      <strong>berikgirisim</strong>
-      .com
-     </a>
-     </div> */}
-    {/* <section className="fixed bottom-6 right-10 flex items-center gap-x-2 *:fill-koyu_gri *:size-8">
-      <X className="" />
-      <Linkedin className="" />
-     </section> */}
    </div>
   </>
  );
