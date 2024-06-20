@@ -11,7 +11,7 @@ import TR from "./languages/tr.json";
 
 i18next.init({
  interpolation: { escapeValue: false },
- lng: localStorage.getItem("lang") || "tr",
+ lng: localStorage.getItem("lang") || "en",
  resources: {
   en: {
    general: EN,
