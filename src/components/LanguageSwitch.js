@@ -1,4 +1,3 @@
-import { ConfigProvider, Switch } from "antd";
 import { useTranslation } from "react-i18next";
 
 export const LanguageSwitch = () => {

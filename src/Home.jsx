@@ -1,3 +1,5 @@
+import { Navigate, useRoutes, Route } from "react-router-dom";
+
 import "./App.css";
 import { X } from "./assets/X";
 import { Mail } from "./assets/Mail";
@@ -11,18 +13,18 @@ import {
  useMotionValue,
  useSpring,
 } from "framer-motion";
-import { BrowserRouter, Route } from "react-router-dom";
-import { Router } from "./Home";
 
-function App() {
+function Home() {
  return (
-  <BrowserRouter>
-   <Router />
-  </BrowserRouter>
+  <>
+   {/* Anasayfa içeriği */}
+   <Navbar />
+   <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center overflow-hidden">
+    <TiltCard />
+   </div>
+  </>
  );
 }
-
-export default App;
 
 const ROTATION_RANGE = 15.5;
 const HALF_ROTATION_RANGE = 15.5 / 2;
@@ -112,4 +114,11 @@ const TiltCard = () => {
    </div>
   </motion.div>
  );
+};
+
+export const Router = () => {
+ return useRoutes([
+  { path: "", element: <Home /> },
+  { path: "*", element: <Navigate to="/" replace /> },
+ ]);
 };
