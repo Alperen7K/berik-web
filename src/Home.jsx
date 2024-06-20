@@ -19,7 +19,7 @@ function Home() {
   <>
    {/* Anasayfa içeriği */}
    <Navbar />
-   <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center overflow-hidden">
+   <div className="w-full min-h-screen p-4 flex items-center justify-center overflow-hidden">
     <TiltCard />
    </div>
   </>
