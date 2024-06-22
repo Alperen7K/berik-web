@@ -1,12 +1,12 @@
-import { Navigate, useRoutes, Route } from "react-router-dom";
-
 import "./App.css";
 import { X } from "./assets/X";
 import { Mail } from "./assets/Mail";
 import { Navbar } from "./components";
 import React, { useRef } from "react";
+import { Helmet } from "react-helmet";
 import { Linkedin } from "./assets/Linkedin";
 import { useTranslation } from "react-i18next";
+import { Navigate, useRoutes } from "react-router-dom";
 import {
  motion,
  useMotionTemplate,
@@ -15,9 +15,13 @@ import {
 } from "framer-motion";
 
 function Home() {
+ const [t] = useTranslation("general");
+
  return (
   <>
-   {/* Anasayfa içeriği */}
+   <Helmet>
+    <meta name="description" content={t("metaDesc")} />
+   </Helmet>
    <Navbar />
    <div className="w-full min-h-screen p-4 flex items-center justify-center overflow-hidden">
     <TiltCard />
