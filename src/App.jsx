@@ -68,7 +68,7 @@ function App() {
   <>
    <Navbar />
    {/* SECTION 1 */}
-   <div className="min-h-screen w-full border-b-2 border-solid border-black">
+   <div className="min-h-screen w-full ">
     <div className="w-full min-h-screen p-4 flex flex-col items-center justify-center gap-y-8">
      <h1 className="font-swiss text-center text-[24px]">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, distinctio?
@@ -86,30 +86,30 @@ function App() {
    >
     <div ref={refSm}>
      <div className="relative w-[150vw] h-[100vw] pb-[50vw] rounded-full  overflow-hidden grid grid-cols-2 ">
-      {/* <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="-rotate-45 w-[80vw] text-center">
-      1- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
+      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
+       <label className="-rotate-45 w-[80vw] text-end">
+        1- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+        soluta.
+       </label>
       </div>
       <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="rotate-45 w-[80vw] text-center">
-      4- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
+       <label className="rotate-45 w-[80vw] text-start">
+        4- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+        soluta.
+       </label>
       </div>
-      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="rotate-45 scale-[-1] w-[80vw] text-center">
-      2- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
+      <div className="w-[75vw] h-[75vw] flex items-start rotate-45 justify-end">
+       <label className=" w-[80vw] scale-[-1] ] text-end ">
+        2- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+        soluta.
+       </label>
       </div>
-      <div className="w-[75vw] h-[75vw]  flex items-center justify-center ">
-      <label className="-rotate-45 scale-[-1] w-[80vw] text-center">
-      3- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      soluta.
-      </label>
-    </div> */}
+      <div className="w-[75vw] h-[75vw] -rotate-45 flex items-start justify-start ">
+       <label className=" scale-[-1] w-[80vw] text-start">
+        3- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+        soluta.
+       </label>
+      </div>
 
       <div className="absolute w-[150vw] h-[100vw] flex items-center justify-center">
        <img src={circle} className="size-[15vh]" />
@@ -157,7 +157,7 @@ function App() {
     </div>
    </div>
    {/* SECTION 3 */}
-   <div className="w-full min-h-screen p-4 border-t-2 border-solid border-black flex items-center justify-center">
+   <div className="w-full min-h-screen p-4  flex items-center justify-center">
     <h1 className="font-swiss text-center">{t("title")}</h1>
    </div>
   </>
