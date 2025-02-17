@@ -161,13 +161,12 @@
 
 // export default App;
 
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { Navbar } from "./components";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactNode, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Landing } from "./Landing";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -257,13 +256,13 @@ const App = () => {
       {/* 2 numaralı */}
       <SpinContainer className="-rotate-45 scale-[-1] text-[7vw]">
        <h1 className="bg-acik_gri text-koyu_gri px-4 py-1 rounded-xl">
-        {t("aiStartUpInHealth")}
+        {t("berikTextile")}
        </h1>
       </SpinContainer>
       {/* 1 numaralı */}
       <SpinContainer className="rotate-45 text-[9vw]">
        <h1 className="bg-kırmızı text-white px-4 py-1 rounded-xl">
-        {t("berikTextile")}
+        {t("aiStartUpInHealth")}
        </h1>
       </SpinContainer>
      </div>
@@ -288,7 +287,7 @@ const App = () => {
       {/* 1 numaralı */}
       <SmSpinContainer className="rotate-45 ">
        <h1 className=" text-center text-[12vw] font-bold bg-kırmızı text-white px-4 py-2 rounded-xl">
-        {t("berikTextile")}
+        {t("aiStartUpInHealth")}
        </h1>
       </SmSpinContainer>
       {/* 3 numaralı */}
@@ -300,7 +299,7 @@ const App = () => {
       {/* 2 numaralı */}
       <SmSpinContainer className="-rotate-45 scale-[-1]">
        <h1 className="text-center text-[12vw] font-bold bg-acik_gri text-koyu_gri px-4 py-2 rounded-xl">
-        {t("aiStartUpInHealth")}
+        {t("berikTextile")}
        </h1>
       </SmSpinContainer>
      </div>
