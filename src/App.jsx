@@ -254,10 +254,12 @@ const App = () => {
        </h1>
       </SpinContainer>
       {/* 2 numaralı */}
-      <SpinContainer className="-rotate-45 scale-[-1] text-[7vw]">
-       <h1 className="bg-acik_gri text-koyu_gri px-4 py-1 rounded-xl">
-        {t("berikTextile")}
-       </h1>
+      <SpinContainer className="cursor-pointer -rotate-45 scale-[-1] text-[7vw]">
+       <a href="https://beriktextile.com" target="_blank">
+        <h1 className="bg-acik_gri text-koyu_gri px-4 py-1 rounded-xl">
+         {t("berikTextile")}
+        </h1>
+       </a>
       </SpinContainer>
       {/* 1 numaralı */}
       <SpinContainer className="rotate-45 text-[9vw]">
@@ -298,9 +300,11 @@ const App = () => {
       </SmSpinContainer>
       {/* 2 numaralı */}
       <SmSpinContainer className="-rotate-45 scale-[-1]">
-       <h1 className="text-center text-[12vw] font-bold bg-acik_gri text-koyu_gri px-4 py-2 rounded-xl">
-        {t("berikTextile")}
-       </h1>
+       <a href="https://beriktextile.com" target="_blank">
+        <h1 className="text-center text-[12vw] font-bold bg-acik_gri text-koyu_gri px-4 py-2 rounded-xl">
+         {t("berikTextile")}
+        </h1>
+       </a>
       </SmSpinContainer>
      </div>
     </div>
